@@ -74,3 +74,9 @@
     ansible.builtin.shell: mongosh --host mongodb.jayani23.fun </app/db/master-data.js
     when: catalogue_output.stdout | int < 0
 
+  - name: start and enable catalogue
+    ansible.builtin.service:
+      name: catalogue
+      enabled: yes
+      state: started
+
