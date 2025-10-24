@@ -61,7 +61,8 @@
   #   register: catalogue_output
 
   - name: evaluate catalogue database
-    community.mongodb_shell:
+    community.mongodb.mongodb_shell:
+      login_host: mongodb.jayani23.fun
       eval: db.getMongo().getDBNames().indexOf('catalogue')
     register: catalogue_output
 
