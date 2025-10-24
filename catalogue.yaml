@@ -66,9 +66,11 @@
   #     eval: db.getMongo().getDBNames().indexOf('catalogue')
   #   register: catalogue_output
 
-  - name: print catalogue output
-    ansible.builtin.debug:
-      msg: "{{ catalogue_output }}"
+  # - name: print catalogue output
+  #   ansible.builtin.debug:
+  #     msg: "{{ catalogue_output }}"
 
-  # - name: load products into mongodb
-  #   ansible.builtin.shell: mongosh --host mongodb.jayani23.fun </app/db/master-data.js
+  - name: load products into mongodb
+    ansible.builtin.shell: mongosh --host mongodb.jayani23.fun </app/db/master-data.js
+    when: catalogue_output.stdout < 0
+
