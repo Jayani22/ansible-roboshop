@@ -8,6 +8,9 @@
     domain_name: "jayani23.fun"
     instances: 
     - mongodb
+    - redis
+    - rabbitmq
+    - mysql
   tasks:
   - name: create ec2-instance
     amazon.aws.ec2_instance:
