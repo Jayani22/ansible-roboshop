@@ -1,0 +1,22 @@
+{
+        "changed": true,
+        "cmd": [
+            "mongosh",
+            "mongodb.jayani23.fun",
+            "--quiet",
+            "--eval",
+            "db.getMongo().getDBNames().indexOf('catalogue')"
+        ],
+        "delta": "0:00:00.992124",
+        "end": "2025-10-24 15:25:36.151798",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-24 15:25:35.159674",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "-1",
+        "stdout_lines": [
+            "-1"
+        ]
+    }
