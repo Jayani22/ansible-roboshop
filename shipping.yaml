@@ -21,7 +21,7 @@
   - name: create roboshop system user
     ansible.builtin.user:
       name: roboshop
-      comment: Roboshop System user
+      comment: RoboShop System user
       system: true
       shell: /sbin/nologin
       home: /app
@@ -66,18 +66,18 @@
     ansible.builtin.copy:
       src: shipping.service
       dest: /etc/systemd/system/shipping.service
-  
+
   - name: import shipping data into mysql
     community.mysql.mysql_db:
       state: import
       name: all
-      login_host: mysql.jayani23.fun
+      login_host: mysql.daws86s.fun
       login_user: root
       login_password: RoboShop@1
       target: "{{ item }}"
     loop:
     - /app/db/schema.sql
-    - /app/db/app-user.sql
+    - /app/db/app-user.sql 
     - /app/db/master-data.sql
 
   - name: daemon reload enable and start
@@ -86,3 +86,5 @@
       enabled: true
       state: started
       daemon_reload: true
+
+  
