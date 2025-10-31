@@ -4,8 +4,13 @@ regions:
 filters:
   tag:Name: frontend
   instance-state-name : running
-hostname:
+hostnames:
   - private-ip-address
 compose:
   # This sets the 'ansible_host' variable to connect with the private IP address without changing the host
   ansible_host: private_ip_address
+keyed_groups:
+  # add hosts to tag Name_value groups for each aws_ec2 host's tags.Name variable.
+  - key: tags.Name
+    prefix: "dynamic" # dynamic_frontend
+    separator:"_"
